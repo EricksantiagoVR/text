@@ -1,28 +1,172 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-background: white;
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: darkblue;
+    color: white;
+    overflow-x: hidden;
 }
 
-.hard{
-align-content: center;
-display: flex;
-justify-content: space-between;
-padding: 25px 450px;
-background: black;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 220px;
+    background: #001d61;
 }
 
-.har{
-color: white;
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: 28px;
 }
 
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
 
-.himg img{
-	width: 220px;
-	border-radius: 200px;
-	box-shadow: 0 0 20px blue;
+.menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: rgb(0, 255, 242);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 80px;
+}
+
+.htexto {
+    width: 50%;
+}
+
+.htexto h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: rgb(0, 225, 255);
+}
+
+.htexto p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: whitesmoke;
+}
+
+.htexto button {
+    padding: 12px 35px;
+    border: none;
+    background: rgb(0, 255, 247);
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.htexto button:hover {
+    transform: scale(1.05);
+    background: rgb(146, 146, 146);
+    color: #ffffff;
+}
+
+/* Corregido: Se eliminó el bug del contenedor cuadrado y se adaptó al video */
+.himg video {
+    width: 500px;
+    height: 280px; /* Altura fija proporcional al ancho */
+    object-fit: cover; /* Recorta el video para que llene el óvalo sin deformarse */
+    border-radius: 140px; /* Crea la elipse idéntica a tu diseño */
+    box-shadow: 0 0 30px aqua;
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
+    display: block;
+}
+
+.himg video:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 45px rgba(0, 238, 255, 0.9);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    background: #1e293b;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 0.7s;
+    text-align: center;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: aqua;
+    margin: 10px 0;
+}
+
+.card p {
+    color: whitesmoke;
+    padding: 0 10px;
+}
+
+.card:hover {
+    transform: translateY(-13px);
+    box-shadow: 0 10px 40px rgba(0, 238, 255, 0.5);
+}
+
+/* Corregido: Estructura del carrusel con animación fluida */
+/* Contenedor principal que oculta lo que se sale de la pantalla */
+.carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+/* Espacio total para las 3 imágenes en línea horizontal */
+.slides {
+    display: flex;
+    width: 300%; 
+    animation: slide 12s infinite ease-in-out;
+}
+
+/* Propiedades individuales para cada imagen */
+.slides img {
+    width: 33.333%; /* CÁLCULO REAL: Cada una ocupa un tercio del 300% total */
+    flex-shrink: 0; /* Evita de manera absoluta que Flexbox las aplaste */
+    height: 450px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+/* Ciclo de animación exacto paso a paso */
+@keyframes slide {
+    0% {margin-left: 0;}
+    30% {margin-left: 0;}
+    35% {margin-left: -100%;}
+    65% {margin-left: -100%;}
+    70% {margin-left: -200%;}
+    100% {margin-left: -200%;}
 }
