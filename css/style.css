@@ -6,5 +6,23 @@ box-sizing: border-box;
 
 body{
 background: white;
-text-align: ;
+}
+
+.hard{
+align-content: center;
+display: flex;
+justify-content: space-between;
+padding: 25px 450px;
+background: black;
+}
+
+.har{
+color: white;
+}
+
+
+.himg img{
+	width: 220px;
+	border-radius: 200px;
+	box-shadow: 0 0 20px blue;
 }
